@@ -1,2 +1,1 @@
-# monty
-stacks, queues - LIFO, FIFO
+lost
