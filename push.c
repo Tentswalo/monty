@@ -33,5 +33,13 @@ void m_push(stack_t **stack, unsigned int line_number)
   char *arg;
   int n;
 
-  arg = strtok(NULL, "ntr ");
-  if (arg == NULL ~~
+  arg = strtok(NULL, "\n\t\r ");
+  if (arg == NULL || check_for_digit(arg))
+  {
+      dprint(STDOUT_FILENO,
+	     "L%u: usage: push integer\n",
+	     line_number);
+      exit(EXIT_FAILURE);
+  }
+  var.stack_len++;
+}
